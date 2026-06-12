@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n,t as r}from"./index-q_4ppomx.js";var i={class:`about`},a=r({__name:`About`,setup(r){return(r,a)=>(e(),n(`div`,i,[...a[0]||=[t(`h1`,null,`关于 GalaxyERP`,-1),t(`p`,null,`这是关于页面`,-1)]]))}},[[`__scopeId`,`data-v-c1ebd0d4`]]);export{a as default};
