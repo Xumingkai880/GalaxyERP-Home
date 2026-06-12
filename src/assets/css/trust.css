@@ -1,0 +1,351 @@
+/* ========== 信任与客户区样式文件 ========== */
+/* trust.css：客户案例区、合作品牌 logo、评价卡片等样式。 */
+/* ========== Trust Section ========== */
+.trust { text-align: center; }
+
+.trust-stats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-stat .num {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 800;
+  font-family: var(--font-num);
+  color: var(--white);
+}
+
+.trust-stat .label {
+  font-size: 14px;
+  color: var(--white-50);
+  margin-top: 4px;
+}
+
+/* ========== 平台对接区 ========== */
+.trust-logos {
+  margin-top: 64px;
+  padding: 48px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.trust-logos-label {
+  font-size: 13px;
+  color: rgba(255,255,255,.40);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.trust-logos-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ---- 已接入平台（大号突出） ---- */
+.active-platform .trust-logo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.active-platform span {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.active-platform:hover .trust-logo-icon {
+  transform: scale(1.08);
+}
+
+.active-platform:hover span {
+  color: #fff;
+}
+
+/* Temu 标签 */
+.platform-tag {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.08);
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: .5px;
+}
+
+/* ---- 即将接入区 ---- */
+.trust-upcoming {
+  margin-top: 0;
+  padding: 40px 0 48px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.upcoming-label {
+  margin-bottom: 28px;
+  color: rgba(255,255,255,.28);
+  font-size: 12px;
+}
+
+.upcoming-row {
+  gap: 28px;
+}
+
+.upcoming-platform .trust-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  opacity: .55;
+  filter: grayscale(0.3);
+  transition: opacity .3s, filter .3s, transform .3s;
+}
+
+.upcoming-platform span {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,.3);
+  transition: color .3s;
+}
+
+.upcoming-platform:hover .trust-logo-icon {
+  opacity: .85;
+  filter: grayscale(0);
+  transform: scale(1.06);
+}
+
+.upcoming-platform:hover span {
+  color: rgba(255,255,255,.6);
+}
+
+/* 平台 logo 项（基础） */
+.trust-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  transition: all .3s;
+  cursor: default;
+}
+
+.trust-logo-icon {
+  flex-shrink: 0;
+  object-fit: cover;
+  transition: transform .3s, filter .3s, opacity .3s;
+}
+
+/* ========== 评论区风格 ========== */
+.testimonial-section {
+  padding-bottom: 100px;
+}
+
+.testimonial-section .container {
+  max-width: 1140px;
+}
+
+.testimonial-thread {
+  max-width: 1140px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* 单条评论 */
+.testimonial-comment {
+  display: flex;
+  gap: 0;
+}
+
+/* 左侧彩色边条 */
+.testimonial-bar {
+  width: 4px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  margin: 20px 16px 20px 0;
+  opacity: .7;
+}
+.testimonial-bar.bar-0 { background: #4F6DFF; }
+.testimonial-bar.bar-1 { background: #10B981; }
+.testimonial-bar.bar-2 { background: #F59E0B; }
+
+/* 评论内容区 */
+.testimonial-body {
+  flex: 1;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--white-06);
+  min-width: 0;
+}
+
+/* 引用行：大引号 + 文字 */
+.testimonial-quote {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.testimonial-quote-svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: .5;
+}
+
+.testimonial-quote p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--white-80);
+  line-height: 1.75;
+}
+
+/* 作者行 */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.testimonial-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.testimonial-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.testimonial-role {
+  font-size: 11px;
+  color: var(--white-30);
+  margin-top: 1px;
+}
+
+/* 互动按钮 */
+.testimonial-interact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--white-30);
+  flex-shrink: 0;
+}
+.testimonial-interact span {
+  margin-right: 10px;
+}
+.interact-icon {
+  width: 14px;
+  height: 14px;
+  opacity: .5;
+}
+
+/* ============================================================
+   深色模式覆盖（默认主题）
+   ============================================================ */
+body:not(.theme-light) .testimonial-bar {
+  opacity: 1;
+}
+body:not(.theme-light) .testimonial-body {
+  border-bottom-color: rgba(255, 255, 255, .08);
+}
+body:not(.theme-light) .testimonial-quote-svg {
+  opacity: .4;
+}
+
+/* ============================================================
+   浅色模式覆盖
+   ============================================================ */
+/* 浅色模式 */
+body.theme-light .trust-logos {
+  border-top-color: rgba(17,24,39,.10);
+}
+
+body.theme-light .trust-upcoming {
+  border-top-color: rgba(17,24,39,.05);
+  border-bottom-color: rgba(17,24,39,.10);
+}
+
+body.theme-light .trust-logos-label {
+  color: rgba(17,24,39,.45);
+}
+
+body.theme-light .upcoming-label {
+  color: rgba(17,24,39,.28);
+}
+
+body.theme-light .active-platform span {
+  color: rgba(17,24,39,.70);
+}
+
+body.theme-light .active-platform:hover span {
+  color: rgba(17,24,39,.9);
+}
+
+body.theme-light .platform-tag {
+  color: rgba(17,24,39,.45);
+  background: rgba(17,24,39,.06);
+}
+
+body.theme-light .upcoming-platform .trust-logo-icon {
+  opacity: .5;
+  filter: grayscale(0.4);
+}
+
+body.theme-light .upcoming-platform span {
+  color: rgba(17,24,39,.3);
+}
+
+body.theme-light .upcoming-platform:hover .trust-logo-icon {
+  opacity: .8;
+  filter: grayscale(0);
+}
+
+body.theme-light .upcoming-platform:hover span {
+  color: rgba(17,24,39,.55);
+}
+
+/* 浅色模式评论 */
+body.theme-light .testimonial-body {
+  border-bottom-color: rgba(17,24,39,.08);
+}
+body.theme-light .testimonial-quote p {
+  color: rgba(17,24,39,.75);
+}
+body.theme-light .testimonial-name {
+  color: rgba(17,24,39,.9);
+}
+body.theme-light .testimonial-role {
+  color: rgba(17,24,39,.4);
+}
+body.theme-light .testimonial-interact {
+  color: rgba(17,24,39,.3);
+}

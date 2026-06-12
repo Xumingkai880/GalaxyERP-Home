@@ -1,0 +1,107 @@
+/* ========== 核心价值区样式文件 ========== */
+/* values.css：对应“核心能力”区域，控制价值卡片、图标和指标展示。 */
+/* 这里修改可影响产品优势卡片的排版与悬停效果。 */
+/* ========== Core Values Section ========== */
+.values .section-desc { margin-bottom: 48px; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  background: var(--white-04);
+  border: 1px solid var(--white-08);
+  transition: all .4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card:hover {
+  border-color: rgba(108, 124, 224, .3);
+  transform: translateY(-4px);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-light), transparent);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.value-card:hover::before { opacity: 1; }
+
+.value-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.value-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-icon svg { width: 20px; height: 20px; }
+
+.value-icon.v1 { background: linear-gradient(135deg, rgba(108, 124, 224, .2), rgba(108, 124, 224, .05)); color: var(--brand-light); }
+.value-icon.v2 { background: linear-gradient(135deg, rgba(0, 212, 170, .2), rgba(0, 212, 170, .05)); color: var(--accent); }
+.value-icon.v3 { background: linear-gradient(135deg, rgba(254, 188, 46, .2), rgba(254, 188, 46, .05)); color: #febc2e; }
+.value-icon.v4 { background: linear-gradient(135deg, rgba(167, 139, 250, .2), rgba(167, 139, 250, .05)); color: #a78bfa; }
+
+body.theme-light .value-icon.v1 { background: linear-gradient(135deg, rgba(79,109,255,.15), rgba(79,109,255,.04)); color: var(--brand); }
+body.theme-light .value-icon.v2 { background: linear-gradient(135deg, rgba(0,212,170,.15), rgba(0,212,170,.04)); color: #00b894; }
+body.theme-light .value-icon.v3 { background: linear-gradient(135deg, rgba(245,158,11,.15), rgba(245,158,11,.04)); color: #f59e0b; }
+body.theme-light .value-icon.v4 { background: linear-gradient(135deg, rgba(139,92,246,.15), rgba(139,92,246,.04)); color: #8b6cf6; }
+
+.value-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 14px;
+  color: var(--white-50);
+  line-height: 1.7;
+}
+
+.value-metric {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--white-08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.value-metric .num {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-num);
+}
+
+.value-metric .num.green { color: var(--accent); }
+.value-metric .num.blue { color: var(--brand-light); }
+.value-metric .num.yellow { color: #febc2e; }
+.value-metric .num.purple { color: #a78bfa; }
+
+.value-metric .label {
+  font-size: 13px;
+  color: var(--white-50);
+}

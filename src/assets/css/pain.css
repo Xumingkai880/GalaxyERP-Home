@@ -1,0 +1,183 @@
+/* ========== 痛点区 - 轮播样式 ========== */
+.pain {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, var(--section-dark), transparent);
+}
+
+.pain-carousel-wrap {
+  max-width: 960px;
+  margin: 40px auto 0;
+}
+
+/* ========== Element Plus 轮播覆盖 ========== */
+.pain-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+/* 强制容器撑满轮播区 */
+.pain-carousel .el-carousel__container {
+  height: 100% !important;
+}
+
+/* 轮播指示器 */
+.pain-carousel .el-carousel__indicators {
+  bottom: 100px;
+}
+
+.pain-carousel .el-carousel__indicator {
+  padding: 6px 4px;
+}
+
+.pain-carousel .el-carousel__indicator .el-carousel__button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  opacity: 1;
+  transition: all .3s;
+}
+
+.pain-carousel .el-carousel__indicator.is-active .el-carousel__button {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+/* 箭头 */
+.pain-carousel .el-carousel__arrow {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7);
+  backdrop-filter: blur(8px);
+}
+
+.pain-carousel .el-carousel__arrow:hover {
+  background: rgba(255,255,255,.14);
+  color: #ffffff;
+}
+
+/* ========== 单张轮播图 ========== */
+.pain-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--accent-bg, rgba(79,109,255,.06));
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* SVG 插图区 */
+.pain-slide-visual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pain-slide-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 文字区（底部安全区，避开指示器） */
+.pain-slide-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 48px 28px;
+  background: linear-gradient(transparent 0%, rgba(10,12,28,.75) 50%, rgba(10,12,28,.90) 100%);
+}
+
+.pain-slide-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.pain-slide-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* 彩色点标识 */
+.pain-slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+
+/* ========== 浅色模式 ========== */
+body.theme-light .pain-slide {
+  background: rgba(17,24,39,.02);
+  border-color: rgba(17,24,39,.08);
+}
+
+body.theme-light .pain-slide-text {
+  background: linear-gradient(transparent 0%, rgba(255,255,255,.75) 50%, rgba(255,255,255,.95) 100%);
+}
+
+body.theme-light .pain-slide-text h3 {
+  color: #1a1f36;
+}
+
+body.theme-light .pain-slide-text p {
+  color: rgba(17,24,39,.5);
+}
+
+body.theme-light .pain-carousel .el-carousel__indicator .el-carousel__button {
+  background: rgba(17,24,39,.15);
+}
+
+body.theme-light .pain-carousel .el-carousel__indicator.is-active .el-carousel__button {
+  background: var(--brand, #4F6DFF);
+}
+
+body.theme-light .pain-carousel .el-carousel__arrow {
+  background: rgba(17,24,39,.03);
+  border-color: rgba(17,24,39,.08);
+  color: rgba(17,24,39,.5);
+}
+
+body.theme-light .pain-carousel .el-carousel__arrow:hover {
+  background: rgba(17,24,39,.06);
+  color: #1a1f36;
+}
+
+/* ========== 深色模式 ========== */
+body:not(.theme-light) .pain-carousel .el-carousel__indicator .el-carousel__button {
+  background: rgba(255,255,255,.2);
+}
+body:not(.theme-light) .pain-carousel .el-carousel__indicator.is-active .el-carousel__button {
+  background: #ffffff;
+}
+
+/* ========== 移动端 ========== */
+@media (max-width: 768px) {
+  .pain-carousel-wrap {
+    max-width: 100%;
+    margin-top: 28px;
+  }
+
+  .pain-slide-text {
+    padding: 36px 20px 20px;
+  }
+
+  .pain-slide-text h3 {
+    font-size: 17px;
+  }
+
+  .pain-slide-text p {
+    font-size: 13px;
+    max-width: 100%;
+  }
+}

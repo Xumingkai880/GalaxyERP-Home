@@ -1,0 +1,231 @@
+/* ========== 导航样式文件 ========== */
+/* ========== Navigation ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 32px;
+  transition: background .4s ease, border-color .4s ease;
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: var(--white-04);
+  transform: scaleX(0);
+  transition: transform .4s ease;
+}
+
+.nav.scrolled::after {
+  transform: scaleX(1);
+}
+
+.nav.scrolled {
+  background: var(--overlay-dark);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--white-08);
+}
+
+body.theme-light .nav.scrolled {
+  background: rgba(255,255,255,.95);
+  border-bottom-color: rgba(17,24,39,.08);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 68px;
+}
+
+/* ========== Logo 区 ========== */
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-logo .orbit-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--brand);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow .3s ease;
+}
+
+.nav-logo:hover .orbit-icon {
+  box-shadow: 0 0 20px var(--brand-glow);
+}
+
+.nav-logo .orbit-icon::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-light);
+  box-shadow: 0 0 12px var(--brand);
+}
+
+.nav-logo img {
+  height: 34px;
+  width: auto;
+}
+
+/* ========== 链接区（自动撑满中间） ========== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 14px;
+  color: var(--white-70);
+  font-weight: 400;
+  padding: 6px 0;
+  transition: color .25s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--brand);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* ========== CTA 区 ========== */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.nav-login {
+  font-size: 14px;
+  color: var(--white-70);
+  font-weight: 400;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.nav-login:hover { color: var(--white); }
+
+/* ========== 主题切换按钮 ========== */
+.theme-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--white-15);
+  color: var(--white-70);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .25s ease;
+  padding: 0;
+}
+
+.theme-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand-light);
+  background: var(--white-04);
+  transform: rotate(15deg);
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ========== 汉堡菜单 ========== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--white-70);
+  border-radius: 2px;
+  transition: all .3s;
+}
+
+/* ========== 移动端菜单 ========== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--overlay-dark-heavy);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+body.theme-light .mobile-menu {
+  background: var(--overlay-dark);
+}
+
+.mobile-menu.active { display: flex; }
+
+.mobile-menu a {
+  font-size: 20px;
+  color: var(--white-70);
+  font-weight: 500;
+}
+
+.mobile-menu a:hover { color: var(--white); }
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-size: 28px;
+  color: var(--white-50);
+  cursor: pointer;
+}

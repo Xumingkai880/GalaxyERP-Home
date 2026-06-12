@@ -1,0 +1,55 @@
+/* ========== 全局变量文件 ========== */
+/* variables.css：定义全局颜色、字体、圆角、尺寸等设计 token。 */
+/* 修改这里会影响整个页面的配色和基础布局。 */
+/* ========== Design Tokens (CSS Variables) ========== */
+:root {
+  --bg-deep: #070a14;
+  --bg-dark: #0a0e1a;
+  --bg-mid: #0d1b3e;
+  --brand: #6c7ce0;
+  --brand-light: #8ca0ff;
+  --brand-glow: rgba(108, 124, 224, .25);
+  --overlay-dark: rgba(7, 10, 20, .85);
+  --overlay-dark-heavy: rgba(7, 10, 20, .95);
+  --card-dark: rgba(13, 27, 62, .6);
+  --section-dark: rgba(13, 27, 62, .3);
+  --shadow-deep: rgba(0, 0, 0, .4);
+  --accent: #00d4aa;
+  --white: #ffffff;
+  --white-90: rgba(255, 255, 255, .92);
+  --white-70: rgba(255, 255, 255, .7);
+  --white-50: rgba(255, 255, 255, .5);
+  --white-30: rgba(255, 255, 255, .3);
+  --white-15: rgba(255, 255, 255, .15);
+  --white-08: rgba(255, 255, 255, .08);
+  --white-04: rgba(255, 255, 255, .04);
+  --font-main: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-num: 'Space Grotesk', 'Inter', monospace;
+  --max-w: 1500px;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* 浅色背景 */
+body.theme-light {
+  --bg-deep: #f4f6fb;
+  --bg-dark: #ffffff;
+  --bg-mid: #e8edf7;
+  --brand: #4f6dff;
+  --brand-light: #7f9cff;
+  --brand-glow: rgba(79, 109, 255, .18);
+  --overlay-dark: rgba(255, 255, 255, .95);
+  --overlay-dark-heavy: rgba(255, 255, 255, .98);
+  --card-dark: rgba(243, 245, 249, .92);
+  --section-dark: rgba(17, 24, 39, .08);
+  --shadow-deep: rgba(0, 0, 0, .08);
+  --accent: #00b38a;
+  --white: #111827;
+  --white-90: rgba(17, 24, 39, .92);
+  --white-70: rgba(17, 24, 39, .7);
+  --white-50: rgba(17, 24, 39, .5);
+  --white-30: rgba(17, 24, 39, .3);
+  --white-15: rgba(17, 24, 39, .15);
+  --white-08: rgba(17, 24, 39, .08);
+  --white-04: rgba(17, 24, 39, .04);
+}

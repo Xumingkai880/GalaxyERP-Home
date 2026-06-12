@@ -1,0 +1,176 @@
+/* ========== FAQ 问答区 ========== */
+.faq-section { padding-bottom: 0; }
+.faq-container { text-align: center; }
+.faq-section-desc { margin: 0 auto 12px; max-width: 520px; }
+
+.faq-grid {
+  max-width: 1140px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+  align-items: start;
+}
+
+/* 卡片容器 */
+.faq-card {
+  background: #ffffff;
+  border: 1px solid #e8ecf1;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .25s, box-shadow .25s;
+}
+
+.faq-card:hover {
+  border-color: #c8cdd8;
+}
+
+.faq-card.open {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(79, 109, 255, .08);
+}
+
+/* 问题按钮 */
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  color: #1a1f36;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  text-align: left;
+  line-height: 1.5;
+  transition: color .2s;
+}
+
+.faq-q:hover { color: var(--brand); }
+
+.faq-card.open .faq-q { color: var(--brand); }
+
+/* 编号圆圈 */
+.faq-q-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f4f6fb;
+  color: #8b93a7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .25s, color .25s;
+}
+
+.faq-card.open .faq-q-num {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+/* 问题文字 */
+.faq-q-text {
+  flex: 1;
+}
+
+/* 展开箭头 */
+.faq-q-arrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.faq-q-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: #8b93a7;
+  stroke-width: 2;
+  fill: none;
+  transition: stroke .25s;
+}
+
+.faq-card.open .faq-q-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-card.open .faq-q-arrow svg {
+  stroke: var(--brand);
+}
+
+/* 答案面板 */
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(.25,.8,.25,1);
+}
+
+.faq-a-inner {
+  padding: 0 24px 22px 68px;
+  font-size: 14.5px;
+  color: #5a6175;
+  line-height: 1.8;
+}
+
+.faq-card.open .faq-a {
+  max-height: 240px;
+}
+
+/* 分隔 */
+.faq-divider {
+  width: 100%;
+  height: 1px;
+  background: #f1f3f7;
+  margin: 0;
+  border: none;
+}
+
+/* ========== 深色模式（默认主题 - 午夜石板配色） ========== */
+body:not(.theme-light) .faq-card {
+  background: #141a28;
+  border-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+body:not(.theme-light) .faq-card:hover {
+  background: #182036;
+  border-color: rgba(255, 255, 255, .18);
+}
+body:not(.theme-light) .faq-card.open {
+  background: #161e32;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(108, 124, 224, .15), 0 4px 20px rgba(108, 124, 224, .08);
+}
+body:not(.theme-light) .faq-q {
+  color: var(--white-90);
+}
+body:not(.theme-light) .faq-q:hover { color: var(--brand-light); }
+body:not(.theme-light) .faq-card.open .faq-q { color: var(--brand-light); }
+body:not(.theme-light) .faq-q-num {
+  background: rgba(108, 124, 224, .1);
+  color: var(--brand-light);
+}
+body:not(.theme-light) .faq-card.open .faq-q-num {
+  background: var(--brand);
+  color: #ffffff;
+}
+body:not(.theme-light) .faq-q-arrow svg { stroke: var(--white-30); }
+body:not(.theme-light) .faq-card.open .faq-q-arrow svg { stroke: var(--brand-light); }
+body:not(.theme-light) .faq-a-inner { color: rgba(255, 255, 255, .55); }
+body:not(.theme-light) .faq-divider { background: rgba(255, 255, 255, .08); }
+
+/* ========== 移动端 ========== */
+@media (max-width: 768px) {
+  .faq-grid { grid-template-columns: 1fr; max-width: 100%; gap: 8px; }
+  .faq-q { padding: 16px 18px; font-size: 15px; gap: 12px; }
+  .faq-q-num { width: 28px; height: 28px; font-size: 12px; }
+  .faq-a-inner { padding: 0 18px 18px 58px; font-size: 13px; }
+}

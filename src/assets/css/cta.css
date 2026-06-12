@@ -1,0 +1,46 @@
+/* ========== 行动号召区样式文件 ========== */
+/* cta.css：页面底部的 CTA 区域样式，控制按钮区、背景光圈。 */
+/* 这里调整可以改变最后一屏的呼吁体验。 */
+/* ========== CTA Section ========== */
+.cta-section {
+  text-align: center;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--brand-glow), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta-section p {
+  font-size: 17px;
+  color: var(--white-50);
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.cta-actions { position: relative; }
+
+.cta-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--white-30);
+  position: relative;
+}
